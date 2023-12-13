@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <meta charset="UTF-8">
+    <title>Agência de Viagens</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+    <style>
+        section {
+            background-color: yellow;
+            text-align: center;
+            color: blue;
+        }
+        a {
+            text-decoration: none;
+           
+        }
+        nav {
+            text-align: center;
+            background-color: rgb(138, 255, 5);
+        }
+        #rodape {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 30px;
+            background-color: yellow;
+            color: red;
+            text-align: center;
+        }
+        #principal {
+            border: 2px solid blue;
+            height: 600px;
+            background-image: url("Respostas_teste.png");
+            background-repeat: no-repeat;
+        }
+       
+        </style>  
+    <nav>
+        <a href="Home.html"><b>Home</b></a>
+        <a href="Destino.html"><b>Destino</b></a>
+        <a href="Promocoes.html"><b>Promoções</b></a>
+        <a href="Contato.html"><b>Contato</b></a>
+        <a href="Cadastro.html"><b>Cadastro</b></a>
+    </nav>
+    
+</head>
+<body>
+    
+    <h1>Formulário de cadastro para viagem</h1>
+    <p>Preencha o formulário abaixo e entraremos em contato com você com opções de viagem.</p>
+    
+    <form action="submit.php" method="post">
+       
+        <h2>Informação da viagem</h2>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required><br>
+
+        <label for="destino">Destino:</label>
+        <input type="text" id="destino" name="destino" required><br>
+
+        
+        <h2>Detalhes da viagem</h2>
+        <label for="Data da partida">Data da partida:</label>
+        <input type="date" id="Data da partida" name="Data da partida" required><br>
+
+        <label for="Data de retorno">Data de retorno:</label>
+        <input type="date" id="Data de retorno" name="Data de retorno" required><br>
+
+        <label for="messagem">Messagem (Opcional):</label>
+        <textarea id="messagem" name="messagem" rows="4"></textarea><br>
+
+
+        <input type="Enviar" value="Enviar">
+    </form>
+</body>
+</html>

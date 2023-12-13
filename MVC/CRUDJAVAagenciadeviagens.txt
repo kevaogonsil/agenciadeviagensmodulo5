@@ -1,0 +1,480 @@
+public class cliente{
+private int clienteID;
+private String nome;
+private String sobrenome;
+private String email;
+private String telefone;
+private String endereço;
+
+
+}
+import java.sql.Date;
+public class reserva {
+private int reservaID;
+private int clienteID;
+private Date datareserva;
+private double precototal;
+
+
+}
+import java.sql.Date;
+public class viagem {
+private int viagemID;
+private String destino;
+private Date datapartida;
+private Date dataretorno;
+private String descricao;
+private double preco;
+private int assentosdisponiveis;
+
+
+}
+import java.sql.Date;
+public class pagamento {
+private int pagamentoID;
+private int reservaID;
+private Date datadepagamento;
+private double quantia;
+private String formadepagamento;
+
+
+}
+public class analise {
+private int analiseID;
+private int clienteID;
+private int viagemID;
+private int avaliacao;;
+private String comentario;
+
+
+}
+public class funcionario {
+private int funcionarioID;
+private String primeironome;
+private String sobrenome;
+private String email;
+private String telefone;
+private String papel;
+
+
+}
+public class localizacaodaagencia {
+private int localizacaoID;
+private String nomedolocal;
+private String endereço;
+private String telefone;
+
+
+}
+public class categoriadeviagem {
+private int categoriaID;
+private String nomedacategoria;
+
+
+}
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+public class clienteDAO {
+private Connection connection;
+
+
+public void create(cliente cliente) {
+public class cliente {
+    private int clienteID;
+    private String nome;
+    private String sobrenome;
+    private String email;
+    private String telefone;
+    private String endereco;;
+
+
+    import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+public class CustomerDAO {
+    private Connection connection;
+
+
+    public CustomerDAO(Connection connection) {
+        this.connection = connection;
+    }
+
+
+    
+    public void createcliente(cliente cliente) {
+        String sql = "INSERT INTO Customer (nome, sobrenome, email, telefone,endereco) VALUES (?, ?, ?, ?, ?)";
+
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, customer.getnome());
+            preparedStatement.setString(2, customer.getLsobrenome());
+            preparedStatement.setString(3, customer.getemail());
+            preparedStatement.setString(4, customer.gettelefone());
+            preparedStatement.setString(5, customer.getendereco());
+
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class Main {
+    public static void main(String[] args) {
+        // Database connection setup
+        String jdbcURL = "jdbc:mysql://localhost:3306/agenciadeviagens";
+        String username = "kevinvbgsilva";
+        String password = "legal";
+
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, username, password)) {
+           clienteDAO clienteDAO = new clienterDAO(connection);
+
+
+            Customer newcliente = new cliente();
+            newCustomer.setnome("John");
+            newCustomer.setsobrenome("Doe");
+            newCustomer.setemail("john.doe@example.com");
+            newCustomer.settelefone("+1-123-456-7890");
+            newCustomer.setendereco("123 Main St, City");
+
+
+            customerDAO.createckienter(newcliente);
+            System.out.println("cliente criado com sucesso.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+
+
+}
+
+
+
+
+}
+public cliente read(int clienteID) {
+public class cliente {
+    private int clienteID;
+    private String nome;
+    private String sobrenome;
+    private String email;
+    private String teleone;
+    private String endereco;
+
+
+}
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class clienteDAO {
+    private Connection connection;
+
+
+    public clienteDAO(Connection connection) {
+        this.connection = connection;
+    }
+
+
+    public cliente readcliente(int clienteID) {
+        String sql = "SELECT * FROM cliente  WHERE clienteID = ?";
+        cliente cliente = null;
+
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, clienteID);
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+
+            if (resultSet.next()) {
+                cliente = new cliente();
+                clienter.setclienteID(resultSet.getInt("clienteID"));
+                cliente.setnome(resultSet.getString("nome"));
+                cliente.setsobrenome(resultSet.getString("sobrenome"));
+                clienter.setemail(resultSet.getString("email"));
+                cliente.settelefone(resultSet.getString("telefone"));
+                cliente.setendereco(resultSet.getString("endereco"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return cliente;
+    }
+
+
+    
+    public List<cliente> getAllcliente() {
+        List<cliente> clientes = new ArrayList<>();
+        String sql = "SELECT * FROM cliente";
+
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+
+            while (resultSet.next()) {
+                cliente cliente = new cliente();
+              clienter.set clienteID(resultSet.getInt(" clienteID"));
+                customer.setnome(resultSet.getString("nome"));
+                customer.setsobrenome(resultSet.getString("sobrenome"));
+                customer.setemail(resultSet.getString("email"));
+                customer.settelefone(resultSet.getString("telefone"));
+                customer.setendereco(resultSet.getString("endereco"));
+                clientes.add(cliente);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return clientes;
+    }
+}
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.List;
+
+
+public class Main {
+    public static void main(String[] args) {
+        // Database connection setup
+        String jdbcURL = "jdbc:mysql://localhost:3306/travelagency";
+        String username = "kevinvbgsilva";
+        String password = "legal";
+
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, username, password)) {
+            CustomerDAO customerDAO = new CustomerDAO(connection);
+
+
+          
+            int clienteIDToRead = 1;
+            cliente cliente = clienteDAO.readcliente(clienteIDToRead);
+
+
+            if (cliente != null) {
+                System.out.println("cliente by ID: " + cliente.toString());
+            } else {
+                System.out.println("cliente não encontrado.");
+            }
+
+
+           
+            List<cliente> allclientes = clienteDAO.getAllclientes();
+            System.out.println("todos os clientes:");
+            for (cliente c : allclientes) {
+                System.out.println(c.toString());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+}
+public void update(cliente cliente) {
+public class cliente {
+    private int clienteID;
+    private String nome;;
+    private String sobrenome;
+    private String email;
+    private String telefone;
+    private String endereco;
+
+
+}
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+public class clienteDAO {
+    private Connection connection;
+
+
+    public clienteDAO(Connection connection) {
+        this.connection = connection;
+    }
+
+
+   
+    public void updatecliente(cliente cliente) {
+        String sql = "UPDATE cliente SET nome=?, sobrenome=?, email=?, telefone=?, endereco=? WHERE clienteID=?";
+
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, customer.getnome());
+            preparedStatement.setString(2, customer.getsobrenome());
+            preparedStatement.setString(3, customer.getemail());
+            preparedStatement.setString(4, customer.gettelefone());
+            preparedStatement.setString(5, customer.getendereco());
+            preparedStatement.setInt(6, cliente.getclienteID());
+
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Cliente updated com sucesso.");
+            } else {
+                System.out.println("cliente não encontrado.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class Main {
+    public static void main(String[] args) {
+        // Database connection setup
+        String jdbcURL = "jdbc:mysql://localhost:3306/travelagency";
+        String username = "kevinvbgsilva";
+        String password = "legal";
+
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, username, password)) {
+            CustomerDAO clienteDAO = new clienteDAO(connection);
+
+
+            
+            cliente updatedcliente = new cliente();
+            updatedCustomer.setclienteID(1); // Replace with the customer's actual ID
+            updatedCustomer.setnome("nome updated");
+            updatedCustomer.setsobrenome("sobrenome updated");
+            updatedCustomer.setemail("kevinvbgsilva@gmail.com");
+            updatedCustomer.settelefone("11993952354");
+            updatedCustomer.setendereco("Rua Elias Rachid n 95");
+
+
+        
+            customerDAO.updatecliente(updatedcliente);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+
+
+}
+public void delete(int clienteID) {
+public class cliente {
+    private int clienteID;
+    private String nome;
+    private String sobrenome;;
+    private String email;
+    private String telefone;
+    private String endereco;
+
+
+    
+}
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+public class CustomerDAO {
+    private Connection connection;
+
+
+    public CustomerDAO(Connection connection) {
+        this.connection = connection;
+    }
+
+
+    /
+    public void deletecliente(int clienteID) {
+        String sql = "DELETE FROM Customer WHERE clienteID = ?";
+
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, customerID);
+
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("cliente deletado com sucesso.");
+            } else {
+                System.out.println("cliente não encontrado.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        String jdbcURL = "jdbc:mysql://localhost:3306/agenciadeviagens";
+        String username = "root";
+        String password = "123456";
+
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, username, password)) {
+            clienteDAO clienteDAO = new clienteDAO(connection);
+
+
+            
+            int clienteIDToDelete = 1; 
+
+
+          clienteDAO.deletecliente(clienteIDToDelete);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+

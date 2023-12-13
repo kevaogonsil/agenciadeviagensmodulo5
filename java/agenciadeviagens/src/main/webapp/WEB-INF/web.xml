@@ -1,0 +1,8 @@
+<servlet>
+    <servlet-name>ViagemServlet</servlet-name>
+    <servlet-class>com.example.ViagemServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ViagemServlet</servlet-name>
+    <url-pattern>/ViagemServlet</url-pattern>
+</servlet-mapping>

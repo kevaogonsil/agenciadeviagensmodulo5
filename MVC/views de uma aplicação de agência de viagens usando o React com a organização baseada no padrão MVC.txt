@@ -1,0 +1,59 @@
+Frontend (React):
+
+// DestinosList.js
+import React from 'react';
+
+const DestinosList = ({ destinos }) => {
+  return (
+    <div>
+      <h1>Destinos Disponíveis</h1>
+      <ul>
+        {destinos.map((destino) => (
+          <li key={destino.id}>{destino.nome}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default DestinosList;
+
+
+Backend (Spring):
+
+// Destino.java
+@Entity
+public class Destino {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    // Outros campos e métodos getter/setter
+}
+
+
+// DestinoController.java
+@RestController
+@RequestMapping("/destinos")
+public class DestinoController {
+    @Autowired
+    private DestinoService destinoService;
+
+    @GetMapping("/")
+    public List<Destino> listarDestinos() {
+        return destinoService.listarDestinos();
+    }
+}
+
+Integração Frontend e Backend:
+
+
+axios.get('/api/destinos')
+  .then((response) => {
+    const destinos = response.data;
+    
+  })
+  .catch((error) => {
+    
+  });
+
